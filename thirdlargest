@@ -1,0 +1,29 @@
+public class thirdhighest {
+    public static void main(String[] args){
+        int arr[]={20,50,60,100,10};
+        int firstlargest=Integer.MIN_VALUE;
+        int secondlargest=Integer.MIN_VALUE;
+        int thirdlargest=Integer.MIN_VALUE;
+        
+        if(arr.length<3){
+            System.out.println("small array");
+            return;
+        }
+        for(int i=0; i<arr.length; i++){
+            if(arr[i]>firstlargest){
+                thirdlargest = secondlargest;
+                secondlargest=firstlargest;
+                firstlargest=arr[i];
+            }
+            else if (arr[i]>secondlargest && arr[i]!=firstlargest){
+                secondlargest=arr[i];
+            }
+
+            else if(arr[i]>thirdlargest && arr[i]!=secondlargest){
+                thirdlargest=arr[i];
+            }
+        }
+        System.out.println(firstlargest+""+secondlargest+""+thirdlargest);
+    }
+    
+}
